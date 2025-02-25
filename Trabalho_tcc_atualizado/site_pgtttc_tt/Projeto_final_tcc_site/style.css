@@ -1,0 +1,630 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo {
+    width: 150px;
+    margin: 20px;
+}
+
+
+ul.menu {
+    display: flex;
+        justify-content: center;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    border-bottom: 3px solid #007bff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+ul.menu li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+ul.menu a {
+    text-decoration: none;
+    color: #202124;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+
+ul.menu a:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+
+
+
+.linha-preta {
+    margin-top: 10px;
+    border: none;
+    height: 2px;
+    background-color: #ddd;
+    width: 80%;
+    transition: width 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 750px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+    animation: slideUp 0.8s ease-out;
+}
+
+.tarefas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Reduz o espaço entre as tarefas */
+    justify-content: flex-start; /* Alinha as tarefas à esquerda */
+}
+
+.box {
+    display: inline-block;
+    width: 32%; /* Ajuste para manter três por linha */
+    margin: 10px; /* Reduzindo a margem */
+    padding: 15px; /* Ajuste no padding para manter um tamanho adequado */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.tarefa {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.tarefa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+
+.checkbox-taf1, .checkbox-taf2 {
+    display: flex;
+    padding: 1px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.checkbox-taf1 h2, .checkbox-taf2 h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #4e5358;
+    transition: color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+
+}
+
+.checkbox-taf1 h2:hover, .checkbox-taf2 h2:hover {
+    color: #007bff;
+    transform: scale(1.05);
+}
+
+
+
+.checkbox-taf1 {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.checkbox-taf2 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+   
+ 
+}
+
+.checkbox-container h2{
+    margin-left: 10px;
+}
+
+.espaco{
+    margin-top: -13px;
+}
+
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+input[type="checkbox"]:checked::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: all 0.3s ease;
+}
+
+
+input[type="checkbox"]:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+
+.checkbox-sub {
+    margin-left: 30px;
+    font-size: 1.1rem;
+    color: #5f6368;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.checkbox-sub:hover {
+    color: #007bff;
+    transform: scale(1.05);
+}
+
+
+.checkbox-sub input[type="checkbox"]:checked + span {
+    color: #007bff;
+}
+
+
+select {
+    background-color: #ffffff;
+    color: #202124;
+    border: 2px solid #ddd;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    width: 100%;
+    margin-top: 20px;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #004494;
+}
+
+.p {
+    font-size: 1.6rem;
+    margin: 20px 0;
+    font-weight: 600;
+    color: #202124;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.select-notificacoes {
+    background-color: #ffffff;
+    color: #202124;
+    border: 1px solid #ddd;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    width: 100%;
+    margin-top: 20px;
+    transition: border-color 0.3s ease;
+}
+
+
+.select-notificacoes:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+.tarefaedit {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.submit{
+display: flex;
+justify-content: center;  
+    
+
+}
+
+
+input[type="submit"] {
+    display: flex;
+    justify-content: center;
+    background-color: #1bb5e4;
+    color: white;
+    ;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+
+input[type="submit"]:hover {
+    background-color: #1acce4;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+
+input[type="submit"]:active {
+    background-color: #23a8b9;
+    transform: scale(0.98);
+    box-shadow: 0 3px 7px rgba(40, 167, 69, 0.3);
+}
+
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(18, 148, 199, 0.6);
+}
+
+
+.box-form, .box-form1, .box-form2, .box-form3 {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"] {
+    background-color: #f7f7f7;
+    color: #333;
+    border: 2px solid #ddd;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+input[type="text"]::placeholder {
+    color: #999;
+}
+
+input[type="text"]:hover {
+    background-color: #e9ecef;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button#button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+button#button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+button#button:active {
+    background-color: #004494;
+    transform: scale(0.98);
+}
+
+button#button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+
+
+ul.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    border-bottom: 3px solid #007bff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+ul.menu li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+ul.menu a {
+    text-decoration: none;
+    color: #202124;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+ul.menu a:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+
+.linha-preta {
+    margin-top: 10px;
+    border: none;
+    height: 2px;
+    background-color: #ddd;
+    width: 80%;
+    transition: width 0.3s ease;
+}
+
+
+h1 {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.tarefas {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 950px;
+}
+
+
+.tarefas > div {
+    width: 45%;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+input[type="checkbox"]:checked::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.concluidas, .incompletas {
+    margin-bottom: 30px;
+}
+
+
+.concluidas h2:hover, .incompletas h2:hover {
+    color: #0056b3;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.checkbox-taf2{
+    margin-top: 10px;
+}
+
